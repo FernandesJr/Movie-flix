@@ -1,6 +1,6 @@
 package com.devsuperior.movieflix.config;
 
-import com.devsuperior.movieflix.UserService;
+import com.devsuperior.movieflix.services.UserService;
 import com.devsuperior.movieflix.components.JwtTokenEnhancer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
