@@ -47,6 +47,7 @@ public class MovieControllerIT {
 		memberPassword = "123456";
 	}
 
+	//FEITO
 	@Test
 	public void findByIdShouldReturnUnauthorizedWhenNoTokenGiven() throws Exception {
 
@@ -55,7 +56,7 @@ public class MovieControllerIT {
 					.contentType(MediaType.APPLICATION_JSON));
 
 		result.andExpect(status().isUnauthorized());
-	}	
+	}
 
 	@Test
 	public void findByIdShouldReturnMovieWhenUserVisitorAuthenticated() throws Exception {
@@ -113,7 +114,8 @@ public class MovieControllerIT {
 
 		result.andExpect(status().isNotFound());
 	}
-	
+
+	//FEITO
 	@Test
 	public void findByGenreShouldReturnUnauthorizedWhenNoTokenGiven() throws Exception {
 
@@ -124,6 +126,7 @@ public class MovieControllerIT {
 		result.andExpect(status().isUnauthorized());
 	}
 
+	//FEITO
 	@Test
 	public void findByGenreShouldReturnOrderedPageWhenVisitorAuthenticated() throws Exception {
 
@@ -148,6 +151,7 @@ public class MovieControllerIT {
 		result.andExpect(jsonPath("$.content[4].title").value("O Labirinto do Fauno"));
 	}
 
+	//FEITO
 	@Test
 	public void findByGenreShouldReturnOrderedPageWhenMemberAuthenticated() throws Exception {
 
@@ -172,6 +176,7 @@ public class MovieControllerIT {
 		result.andExpect(jsonPath("$.content[4].title").value("O Labirinto do Fauno"));
 	}
 
+	//FEITO
 	@Test
 	public void findByGenreShouldReturnFilteredMoviesWhenGenreIsInformed() throws Exception {
 

@@ -1,5 +1,7 @@
 package com.devsuperior.movieflix.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
@@ -15,6 +17,7 @@ public class Genre implements Serializable {
     private String name;
 
     @OneToMany(mappedBy = "genre")
+    //@JsonIgnore
     private Set<Movie> movies = new HashSet<>();
 
     public Genre(){}
