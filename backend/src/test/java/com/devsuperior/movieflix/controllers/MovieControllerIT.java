@@ -58,6 +58,7 @@ public class MovieControllerIT {
 		result.andExpect(status().isUnauthorized());
 	}
 
+	//FEITO
 	@Test
 	public void findByIdShouldReturnMovieWhenUserVisitorAuthenticated() throws Exception {
 
@@ -80,6 +81,7 @@ public class MovieControllerIT {
 		result.andExpect(jsonPath("$.genre.name").isNotEmpty());
 	}
 
+	//FEITO
 	@Test
 	public void findByIdShouldReturnMovieWhenMemberAuthenticated() throws Exception {
 
@@ -102,6 +104,7 @@ public class MovieControllerIT {
 		result.andExpect(jsonPath("$.genre.name").isNotEmpty());
 	}
 
+	//FEITO
 	@Test
 	public void findByIdShouldReturnNotFoundWhenIdDoesNotExist() throws Exception {
 

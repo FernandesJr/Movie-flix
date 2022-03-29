@@ -1,5 +1,6 @@
 package com.devsuperior.movieflix.resources;
 
+import com.devsuperior.movieflix.dto.MovieCardDTO;
 import com.devsuperior.movieflix.dto.MovieDTO;
 import com.devsuperior.movieflix.services.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,8 +29,8 @@ public class MovieResource {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<MovieDTO> findById(@PathVariable Long id){
-        MovieDTO dto = service.findById(id);
+    public ResponseEntity<MovieCardDTO> findById(@PathVariable Long id){
+        MovieCardDTO dto = service.findById(id);
         return ResponseEntity.ok(dto);
     }
 }
