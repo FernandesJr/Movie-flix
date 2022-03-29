@@ -2,8 +2,11 @@ package com.devsuperior.movieflix.services;
 
 import com.devsuperior.movieflix.dto.MovieCardDTO;
 import com.devsuperior.movieflix.dto.MovieDTO;
+import com.devsuperior.movieflix.dto.ReviewDTO;
 import com.devsuperior.movieflix.entities.Genre;
 import com.devsuperior.movieflix.entities.Movie;
+import com.devsuperior.movieflix.entities.Review;
+import com.devsuperior.movieflix.entities.User;
 import com.devsuperior.movieflix.repositories.GenreRepository;
 import com.devsuperior.movieflix.repositories.MovieRepository;
 import com.devsuperior.movieflix.services.exceptions.ResourceNotFoundException;
@@ -33,6 +36,7 @@ public class MovieService {
         return page.map(m -> new MovieDTO(m));
     }
 
+    @Transactional(readOnly = true)
     public MovieCardDTO findById(Long id){
         Movie movie = repository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Movie does not exists"));
         return new MovieCardDTO(movie);

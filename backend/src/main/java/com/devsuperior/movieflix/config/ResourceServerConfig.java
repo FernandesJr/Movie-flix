@@ -36,6 +36,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     public void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers(PUBLIC).permitAll()
+                .antMatchers("/reviews").hasAnyRole(ROLE_MEMBER)
                 .anyRequest().authenticated(); //Informando que qualquer outra rota não especificada será necessário se autenticar
 
         //Configuração especial para rodar o H2 com a segurança dos recursos

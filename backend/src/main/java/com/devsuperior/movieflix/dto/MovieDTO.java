@@ -2,7 +2,9 @@ package com.devsuperior.movieflix.dto;
 
 import com.devsuperior.movieflix.entities.Movie;
 
-public class MovieDTO {
+import java.io.Serializable;
+
+public class MovieDTO implements Serializable {
 
     private Long id;
     private String title;
